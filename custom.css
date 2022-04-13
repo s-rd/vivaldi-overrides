@@ -1,0 +1,67 @@
+/* Shortcuts make new tabs, not UI */
+.newtab {
+  display: none;
+}
+
+/* Shield thing in the URL bar? No thank you */
+.toolbar-insideinput .ContentBlocker-Control {
+  display: none !important;
+}
+
+/* Hide fugly download button */
+.button-toolbar .ToolbarButton-Button[title="Downloads"] {
+  display: none !important;
+}
+
+/* Fix ugly tab title offset */
+.tab-strip .tab-position .tab .tab-header  > .title {
+  margin-top: 0px !important;
+}
+
+/* Make nav buttons (back, forward) a bit smaller */
+.toolbar-mainbar > .button-toolbar > button span svg {
+  flex: 0 0 20px !important;
+  height: 20px !important;
+}
+
+/* Hide ugly ass 'unread' gradient on tab */
+.tab-position .tab.unread {
+  background-image: none !important;
+}
+
+/* Hover effect on tabs */
+.tab-position .tab:hover:not(.active) {
+  background-color: rgba(0,0,0, 0.025);
+}
+
+/* Make line below url bar a little prettier*/
+/* Do the same thing to the extensions toolbar */
+.address-top .toolbar-mainbar .toolbar-extensions:after,
+.color-behind-tabs-off.address-top .toolbar-mainbar:after {
+  background-color: rgba(0,0,0, 0.07) !important;
+}
+
+/* Align window controls with tab placement */
+.tabs-top#browser.mac .window-buttongroup {
+  margin-left: 13px;
+}
+#browser.mac .window-buttongroup {
+  margin-top: 15px;
+}
+
+/* Remove ugliest dark mode favicon glow ever */
+.acc-dark.color-behind-tabs-off .tab-position .tab.active .tab-header .favicon:not(.svg) {
+  filter: none !important;
+}
+
+/* Dark theme fixes */
+.theme-dark .SearchField,
+.theme-dark .UrlBar-AddressField {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.theme-dark .SearchField:focus-within,
+.theme-dark .UrlBar-AddressField:focus-within {
+  outline: none;
+}
