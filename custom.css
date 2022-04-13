@@ -65,3 +65,7 @@
 .theme-dark .UrlBar-AddressField:focus-within {
   outline: none;
 }
+
+.theme-dark .toolbar-extensions.toolbar-extensions.toolbar-extensions .button-toolbar > button > img {
+  filter: invert(1);
+}
