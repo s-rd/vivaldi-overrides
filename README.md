@@ -10,7 +10,7 @@
 
 2. Find your Vivaldi directory (you can see this at `vivaldi://about`, for example).
 
-3. Inside it, find the `Contents/Frameworks/Vivaldi Framework.framework/Versions/Current/Resources/vivaldi/style` folder – where `Current` should be a symlink to the version of Vivaldi you're using.
+3. Inside it, find the `Contents/Frameworks/Vivaldi Framework.framework/Resources/vivaldi/style` folder – where `Current` should be a symlink to the version of Vivaldi you're using.
 
 4. Clone this repo into said folder 👆🏻
     ```bash
