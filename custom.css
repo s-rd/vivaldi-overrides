@@ -1,3 +1,19 @@
+:root {
+  --srd-bg: #f0f0f4;
+  --srd-hover: #fff;
+  --srd-header-height: 44px;
+  --srd-tab-height: 30px;
+  --srd-tab-width: 33px;
+}
+
+.theme-dark {
+  --srd-bg: #111121;
+  --srd-hover: #202136;
+
+  --srd-bg: #0b0b0e;
+  --srd-hover: #17171c;
+}
+
 /* Shortcuts make new tabs, not UI */
 .newtab {
   display: none;
@@ -18,6 +34,22 @@
   margin-top: 0px !important;
 }
 
+/* Taller tabs */
+.tap-position {
+  height: var(--srd-tab-height);
+  width: var(--srd-tab-width);
+}
+.tab-position .tab .tab-header {
+  flex-basis: var(--srd-tab-height);
+}
+.top#tabs-tabbar-container {
+  min-height: var(--srd-tab-height) !important;
+}
+#tabs-container {
+  flex-basis: var(--srd-tab-height);
+  min-height: var(--srd-tab-height);
+}
+
 /* Make nav buttons (back, forward) a bit smaller */
 .toolbar-mainbar > .button-toolbar > button span svg {
   flex: 0 0 20px !important;
@@ -34,11 +66,47 @@
   background-color: rgba(0,0,0, 0.025);
 }
 
+/* Active tab style */
+#browser .tab-position .tab.active {
+  background-color: var(--srd-hover);
+  box-shadow: rgba(0,0,0,0.1) 0px 1px 6px -2px;
+  border-radius: 8px;
+}
+
+/* Set header background color*/
+#browser.tabs-top #header {
+  background: var(--srd-bg);
+}
+.theme-dark .color-behind-tabs-off .toolbar-mainbar {
+  background: var(--srd-bg);
+  background: transparent;
+}
+.color-behind-tabs-off #tabs-subcontainer {
+  background: var(--srd-bg);
+}
+
+/* Remove border element on the sides of active tab */
+.tabs-top .tab.active:not(.marked):not(.tab-mini):not(.tab-in-accordion):after,
+.tabs-top .tab.active:not(.marked):not(.tab-mini):not(.tab-in-accordion):before {
+  display: none;
+}
+
+/* Make header a bit taller */
+.mac #header {
+  min-height: var(--srd-header-height);
+}
+
+/* Stack header */
+#tabs-subcontainer.visible {
+  min-height: 40px;
+}
+
+
 /* Make line below url bar a little prettier*/
 /* Do the same thing to the extensions toolbar */
 .address-top .toolbar-mainbar .toolbar-extensions:after,
 .color-behind-tabs-off.address-top .toolbar-mainbar:after {
-  background-color: rgba(0,0,0, 0.07) !important;
+  background-color: rgba(0,0,0, 0.05) !important;
 }
 
 /* Align window controls with tab placement */
@@ -46,7 +114,7 @@
   margin-left: 13px;
 }
 #browser.mac .window-buttongroup {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 /* Remove ugliest dark mode favicon glow ever */
